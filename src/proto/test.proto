@@ -1,0 +1,46 @@
+syntax="proto2";
+package example;
+
+option cc_generic_services = true;
+
+message Cpu {
+    required int32 cpu = 1;
+    required float frequency = 2;
+};
+
+message Memory {
+    required float total = 1;
+    required float used = 2;
+    required float avail = 3;
+};
+
+message Disk {
+    required float total = 1;
+    required float used = 2;
+    required float avail = 3;
+};
+
+message Net {
+    required int32 total = 1;
+};
+
+
+message PCInfo {
+    required Cpu cpu = 1;
+    //      required Memory mem = 2;
+    //      required Disk disk = 3;
+    //      required Net net = 4;
+};
+
+message PCInfoResponse {
+    required PCInfo info = 1;
+};
+
+message PCInfoRequest {
+    required string message = 1;
+};
+
+
+service PCInfoService {
+    rpc PCInfo(PCInfoRequest) returns (PCInfoResponse);
+};

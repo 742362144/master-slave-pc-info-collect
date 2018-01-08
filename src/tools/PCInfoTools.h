@@ -87,7 +87,7 @@ namespace tools {
 
     };
 
-    class PCInfoTools{
+    class PCInfo {
     private:
         Cpu cpu;
         Memory mem;
@@ -118,8 +118,10 @@ namespace tools {
         Disk getDisk(){
             return this->disk;
         }
+    };
 
-
+    class PCInfoTools{
+    public:
         //zhi xing ming ling
         std::string execute(std::string command);
         //huo qu shell jiao ben zhi xing jie guo

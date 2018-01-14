@@ -53,14 +53,6 @@ public:
         brpc::Controller* cntl =
             static_cast<brpc::Controller*>(cntl_base);
 
-        // The purpose of following logs is to help you to understand
-        // how clients interact with servers more intuitively. You should
-        // remove these logs in performance-sensitive servers.
-        // You should also noticed that these logs are different from what
-        // we wrote in other projects: they use << instead of printf-style
-        // functions. But don't worry, these logs are fully compatible with
-        // comlog. You can mix them with comlog or ullog functions freely.
-        // The noflush prevents the log from being flushed immediately.
         // 打印日志
         LOG(INFO) << "Received request[log_id=" << cntl->log_id()
                   << "] from " << cntl->remote_side()

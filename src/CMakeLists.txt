@@ -15,6 +15,7 @@ add_subdirectory(proto)
 add_subdirectory(tools)
 add_subdirectory(sqlite)
 add_subdirectory(hwloc)
+add_subdirectory(leveldb)
 
 add_executable(slave slave.cpp)
 add_executable(master master.cpp)
